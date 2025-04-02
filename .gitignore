@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Test and Debug outputs
+/test-results/
+/reports/
+/coverage/
+*.log
+combined.log
+error.log
+
+# Environment and Secrets
+.env
+.env.*
+*.pem
+*.key
+
+# IDE and System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# TypeScript/JavaScript specific
+/dist/
+/build/
+*.tsbuildinfo
+.npm
+.eslintcache
+
+# Playwright specific
+/playwright-report/
+/blob-report/
+/playwright/.cache/

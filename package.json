@@ -1,0 +1,39 @@
+{
+  "name": "js_playwright_demo",
+  "version": "1.0.0",
+  "description": "Playwright Testing Framework for UI and API Testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test tests/e2e",
+    "test:api": "playwright test tests/api",
+    "test:smoke": "playwright test tests/e2e/smoke",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.{ts,json,md}\"",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "testing",
+    "playwright",
+    "automation",
+    "e2e",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "@typescript-eslint/parser": "^8.29.0",
+    "dotenv": "^16.4.7",
+    "eslint": "^9.23.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2",
+    "winston": "^3.17.0"
+  }
+}
