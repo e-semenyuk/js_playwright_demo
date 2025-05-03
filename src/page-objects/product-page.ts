@@ -13,4 +13,12 @@ export class ProductPage extends BasePage {
   async getCartCount(): Promise<string> {
     return this.getText('[data-test="cart-count"]');
   }
+
+  async enterQuantity(quantity: string): Promise<void> {
+    await this.fill('[data-test="quantity-input"]', quantity);
+  }
+
+  async getErrorMessage(): Promise<string> {
+    return this.getText('[data-test="error-message"]');
+  }
 }
