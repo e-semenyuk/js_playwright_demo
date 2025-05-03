@@ -35,4 +35,22 @@ test.describe('Shopping Cart Functionality', () => {
     expect(productPrice).toBeTruthy();
     expect(productQuantity).toBe('1');
   });
+
+  test('should display error message for negative quantity', async () => {
+    logInfo('Starting test to verify error message for negative quantity');
+
+    // Enter negative quantity
+    await productPage.enterQuantity('-1');
+
+    // Click 'Add to Cart' button
+    await productPage.addToCart();
+
+    // Verify error message is displayed
+    const errorMessage = await productPage.getErrorMessage();
+    expect(errorMessage).toBe('Invalid quantity');
+
+    // Verify cart icon does not update
+    const cartCount = await productPage.getCartCount();
+    expect(cartCount).toBe('0');
+  });
 });
