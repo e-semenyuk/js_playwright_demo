@@ -10,6 +10,15 @@ test.describe('Login Functionality', () => {
     await page.goto('/login');
   });
 
+  // EPMXYZ-5248: Verify that the Sign-in form is displayed on the login page load
+  test('should display the Sign-in form on the login page load', async () => {
+    logInfo('Starting test to verify the Sign-in form display on the login page load');
+
+    // Verify the presence of the Sign-in form
+    const isSignInFormVisible = await page.isVisible('[data-test="sign-in-form"]');
+    expect(isSignInFormVisible).toBeTruthy();
+  });
+
   test('should successfully login with valid credentials', async () => {
     logInfo('Starting login test with valid credentials');
 
