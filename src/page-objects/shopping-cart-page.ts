@@ -17,4 +17,21 @@ export class ShoppingCartPage extends BasePage {
   async getProductQuantity(): Promise<string> {
     return this.getText('[data-test="product-quantity"]');
   }
+
+  async getShippingCost(): Promise<string> {
+    return this.getText('[data-test="shipping-cost"]');
+  }
+
+  async getTax(): Promise<string> {
+    return this.getText('[data-test="tax"]');
+  }
+
+  async getTotalAmount(): Promise<string> {
+    return this.getText('[data-test="total-amount"]');
+  }
+
+  async proceedToPayment(): Promise<void> {
+    await this.click('[data-test="proceed-to-payment"]');
+  }
+}
 }
